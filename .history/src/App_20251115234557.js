@@ -20,26 +20,16 @@ function App() {
   // }, [])
 
   const pay = () => {
-    const config = {
-      apiKey: "sk_test_c8839f3404948003a95cf3ba8033ff36283b92cfae71b2fb2552a90e9839e36c"
+        const config = {
+      apiKey: "sk_test_a8eb6f6cbeb539bb35ac87c27ee42418f699519b2d9cb857a46cbda9f5fd6d36"
     }
     const gw = new Gateway(config);
-    gw.Transaction.initialize({amount: 10_000, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}, {
-      onComplete: () => { 
-        if(document.getElementById("gateway_frame")) {
-          document.getElementById("gateway_frame").style.display = 'none'; 
-          document.getElementById('successToast').style.display = "flex";
-        }
-      },
-      onCancelled: () => { 
-        if(document.getElementById("gateway_frame")) {
-          document.getElementById("gateway_frame").style.display = 'none'; 
-          document.getElementById('errorToast').style.display = "flex";
-        }
-      },
-      onError: () => {
-        console.log("error");
-      }
+    gw.Transaction.initialize({amount: 200, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}, {
+      onComplete: () => { if(document.getElementById("gateway_frame")) {
+        document.getElementById("gateway_frame").style.display = 'none'; 
+
+      }},
+      onCancelled: () => { },
     });
   }
 
@@ -50,7 +40,7 @@ function App() {
         <img src={image} alt="Product" className="w-full md:w-1/4" />
         <div className="md:ml-8">
           <h1 className="text-2xl font-bold">Product Name</h1>
-          <p className="text-xl text-gray-600">#10,000</p>
+          <p className="text-xl text-gray-600">$99.99</p>
           <p className="mt-4">Description goes here...</p>
           <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded" onClick={pay}>Pay</button>
         </div>
@@ -59,7 +49,7 @@ function App() {
 
 
         
-<div id="successToast" class="fixed top-5 right-5 hidden  items-center p-4 mb-4 w-80 text-green-700 bg-green-100 rounded-lg shadow-md" role="alert">
+<div id="successToast" class="fixed top-5 right-5 hidden flex items-center p-4 mb-4 w-80 text-green-700 bg-green-100 rounded-lg shadow-md" role="alert">
     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
     </svg>
@@ -71,12 +61,13 @@ function App() {
     </button>
   </div>
 
-  <div id="errorToast" class="fixed top-5 right-5 hidden items-center p-4 mb-4 w-80 text-red-700 bg-red-100 rounded-lg shadow-md" role="alert">
+  <!-- Error Toast -->
+  <div id="errorToast" class="fixed top-5 right-5 hidden flex items-center p-4 mb-4 w-80 text-red-700 bg-red-100 rounded-lg shadow-md" role="alert">
     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-9V7a1 1 0 112 0v2a1 1 0 11-2 0zm1 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
     </svg>
     <div>
-      <span class="font-medium">Error!</span> Payment cancelled.
+      <span class="font-medium">Error!</span> Something went wrong.
     </div>
     <button onclick="hideToast('errorToast')" class="ml-auto text-red-700 hover:text-red-900">
       ✕

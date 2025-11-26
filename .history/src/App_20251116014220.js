@@ -21,7 +21,7 @@ function App() {
 
   const pay = () => {
     const config = {
-      apiKey: "sk_test_c8839f3404948003a95cf3ba8033ff36283b92cfae71b2fb2552a90e9839e36c"
+      apiKey: "sk_test_a8eb6f6cbeb539bb35ac87c27ee42418f699519b2d9cb857a46cbda9f5fd6d36"
     }
     const gw = new Gateway(config);
     gw.Transaction.initialize({amount: 10_000, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}, {

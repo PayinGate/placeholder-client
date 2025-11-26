@@ -21,10 +21,10 @@ function App() {
 
   const pay = () => {
     const config = {
-      apiKey: "sk_test_c8839f3404948003a95cf3ba8033ff36283b92cfae71b2fb2552a90e9839e36c"
+      apiKey: "sk_test_a8eb6f6cbeb539bb35ac87c27ee42418f699519b2d9cb857a46cbda9f5fd6d36"
     }
     const gw = new Gateway(config);
-    gw.Transaction.initialize({amount: 10_000, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}, {
+    gw.Transaction.initialize({amount: 20_000, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}, {
       onComplete: () => { 
         if(document.getElementById("gateway_frame")) {
           document.getElementById("gateway_frame").style.display = 'none'; 
@@ -37,9 +37,6 @@ function App() {
           document.getElementById('errorToast').style.display = "flex";
         }
       },
-      onError: () => {
-        console.log("error");
-      }
     });
   }
 
@@ -50,7 +47,7 @@ function App() {
         <img src={image} alt="Product" className="w-full md:w-1/4" />
         <div className="md:ml-8">
           <h1 className="text-2xl font-bold">Product Name</h1>
-          <p className="text-xl text-gray-600">#10,000</p>
+          <p className="text-xl text-gray-600">#20,000</p>
           <p className="mt-4">Description goes here...</p>
           <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded" onClick={pay}>Pay</button>
         </div>
