@@ -124,7 +124,7 @@ export default function Item(){
             </div>
         }
         {total > 0 && <div className="bubble cursor-pointer" onClick={pay} style={paying|| !isValidEmail(email)? {backgroundColor: "gray"} : {}}>
-        <span className="bubble-text">{paying ? "Paying" : "Pay"} N{noToLocale(total)}</span>
+        <span className="bubble-text">{paying ? "Pay" : "Paying"} N{noToLocale(total)}</span>
     </div>}
         </div>
 }
