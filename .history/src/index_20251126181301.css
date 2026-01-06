@@ -24,7 +24,7 @@ code {
     padding: 10px 20px;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1);
+    transform: scale(0);
     animation: bubbleAnimation 1s forwards;
     font-family: Arial, sans-serif;
     display: flex;
