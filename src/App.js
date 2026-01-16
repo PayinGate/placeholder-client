@@ -11,17 +11,10 @@ import Item from './item';
 
 
 function App() {
-  // useEffect(()=>{
-  //   const config = {
-  //     apiKey: "sk_test_a8eb6f6cbeb539bb35ac87c27ee42418f699519b2d9cb857a46cbda9f5fd6d36"
-  //   }
-  //   const gw = new Gateway(config);
-  //   gw.Transaction.initialize({amount: 200, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}).then((rate)=>{ console.log(rate, ) });
-  // }, [])
   
   const pay = () => {
     const config = {
-      apiKey: "sk_test_57f4c665e16417f2127e086082f09741dc0dd84c81690b32fd7ad4dafbd8895c"
+      apiKey: process.env.REACT_APP_API_KEY
     }
     const gw = new Gateway(config);
     gw.Transaction.initialize({amount: 10_000, currency: "ngn", customer: {email: "awakintade@gmail.com"}, container: "#container"}, {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Bag from './assets/bag.webp';
 import Camera from './assets/camera.webp';
 import Coke from './assets/coke.webp';
@@ -75,7 +75,7 @@ export default function Item(){
         if(paying) return;
         setPaying(true);
         const config = {
-          apiKey: "sk_test_57f4c665e16417f2127e086082f09741dc0dd84c81690b32fd7ad4dafbd8895c"
+          apiKey: process.env.REACT_APP_API_KEY
         }
         const gw = new Gateway(config);
           gw.Transaction.initialize({amount: total, currency: "ngn", customer: {email: email}, container: "#container"}, {
