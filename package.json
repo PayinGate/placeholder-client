@@ -13,7 +13,7 @@
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "gateway-lib": "git+https://github.com/PayinGate/web_sdk.git"
+    "gateway-lib": "git+https://github.com/PayinGate/web_sdk.git#v1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
