@@ -49,7 +49,7 @@ function App() {
     <div className={showProject ? `block` : 'hidden'}>
 
     <div className='block md:hidden p-3 font-sans'>This app is not available for mobile, please use desktop</div>
-    <div className='text-[14px] text-center py-2' >!!! This web app implements the gateway using the its library and APIs. Proceed with a transaction to access the actual platform.<br/>Request test SOL at <a  rel="noreferrer" href="https://faucet.solana.com" target="_blank" className='underline'>https://faucet.solana.com</a> !!!</div>
+    <div className='text-[14px] text-center py-2 px-2' >!!! This web app implements the gateway using the its library and APIs. Proceed with a transaction to access the actual platform.<br/>Request test SOL at <a  rel="noreferrer" href="https://faucet.solana.com" target="_blank" className='underline'>https://faucet.solana.com</a> !!!</div>
       <Item />
       <div id="successToast" className="fixed top-5 right-5 hidden  items-center p-4 mb-4 w-80 text-green-700 bg-green-100 rounded-lg shadow-md" role="alert">
     <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
